@@ -6,7 +6,7 @@ nav{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: aqua;
+    background-color: rgb(117, 89, 155);
     height: 3rem;
     align-items: center;
     justify-content: space-between;
@@ -24,4 +24,27 @@ nav{
 }
 .nav2>div{
     margin:1rem;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: rgb(243, 162, 133);
+}
+
+.container1{
+    margin:1rem;
+    background-color:rgb(152, 247, 215);
+    padding: 1rem;
+    width: 20%;
+   
+
+}
+.image{
+    display: block;
+    width: 100%;
+    margin:0%;
+    
 }
