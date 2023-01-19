@@ -18,7 +18,6 @@ async function fetchapi(){
       const innerdiv = document.createElement("div");
       innerdiv.setAttribute("class", "card");
       div.append(innerdiv);
-
       const img = document.createElement("img")
       img.setAttribute("class","image")
       innerdiv.append(img);

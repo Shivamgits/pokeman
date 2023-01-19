@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0%;
     padding: 0%;
 }
@@ -47,4 +47,124 @@ nav{
     width: 100%;
     margin:0%;
     
-}
+} */
+
+* {
+    margin: 0%;
+    padding: 0%;
+    /* border: 1px solid red; */
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #EB455F;
+    height: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+    padding: 0.5rem;
+  }
+  #logo img{
+          height: 3rem;
+          margin-left: 2rem;
+  }
+  
+  .nav1 {
+    color: white;
+    font-family: "Bowlby One SC", cursive;
+    padding: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    height: 100%;
+  
+  }
+  .nav2 {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+  }
+  .nav2 li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    margin-right: 1rem;
+  }
+  #searchBar {
+    width: 15rem;
+    height: 100%;
+    margin-right: 0rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+  #search {
+    background-color: grey;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 1.9rem;
+  }
+  
+  .nav2 > div {
+    margin: 1rem;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #FCFFE7;
+  }
+  
+  .container1 {
+    margin: 1rem;
+    background-color: #BAD7E9 ;
+    padding: 1rem;
+    width: 20%;
+    border-radius: 1rem;
+    border: 2px solid #2B3467;
+    height: 20rem;
+    color: black;
+    font-family: "Bowlby One SC", cursive;
+    letter-spacing: .1rem;
+    text-align: center;
+  }
+  .button{
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+  }
+  .button #previous{
+      height: 1.8rem;
+      width: 9rem;
+      border:1px solid #2B3467;
+      outline: none;
+      background-color:  #EB455F;
+      font-family: "Bowlby One SC", cursive;
+      color: white;
+      border-radius: 1rem;
+  }
+  .button #previous:hover{
+      color:#EB455F ;
+      background-color: white;
+      
+  }
+  .button #next{
+      height: 1.8rem;
+      width: 9rem;
+      border:1px solid #2B3467;
+      outline: none;
+      background-color: #EB455F ;
+      font-family: "Bowlby One SC", cursive;
+      color: white;
+      border-radius: 1rem;
+  }
+  .button #next:hover{
+      color:#EB455F ;
+      background-color: white;
+      transform: scale(1.05);
+  }
