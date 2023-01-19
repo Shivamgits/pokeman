@@ -1,58 +1,7 @@
-/* *{
-    margin: 0%;
-    padding: 0%;
-}
-nav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: rgb(117, 89, 155);
-    height: 3rem;
-    align-items: center;
-    justify-content: space-between;
-    position: static;
-    padding: 0.5rem;
-}
-.nav1{
-    background-color: white;
-    padding: 0.5rem;
-    border-radius:0.4rem;
-}
-.nav2{
-    display: flex;
-
-}
-.nav2>div{
-    margin:1rem;
-}
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    min-height: 100vh;
-    background-color: rgb(243, 162, 133);
-}
-
-.container1{
-    margin:1rem;
-    background-color:rgb(152, 247, 215);
-    padding: 1rem;
-    width: 20%;
-   
-
-}
-.image{
-    display: block;
-    width: 100%;
-    margin:0%;
-    
-} */
 
 * {
     margin: 0%;
     padding: 0%;
-    /* border: 1px solid red; */
   }
   nav {
     display: flex;
@@ -119,20 +68,37 @@ nav{
     justify-content: space-between;
     min-height: 100vh;
     background-color: #FCFFE7;
+    font-size: 0.9em;
   }
   
   .container1 {
+    background: radial-gradient(circle at 50% 0%,
+     orange 40%, #ffffff 36%);
     margin: 1rem;
     background-color: #BAD7E9 ;
     padding: 1rem;
-    width: 20%;
-    border-radius: 1rem;
+    width: 17%;
+    border-radius: 0.7rem;
     border: 2px solid #2B3467;
-    height: 20rem;
+    height: 18rem;
     color: black;
     font-family: "Bowlby One SC", cursive;
     letter-spacing: .1rem;
     text-align: center;
+  }
+  .image{
+    /* height: 8rem;
+    padding-bottom: 2rem; */
+    width: 11rem;
+    max-height: 10rem;
+    margin: 0.5rem auto;
+  }
+  .name{
+    margin-bottom: 1rem;
+  }
+  .stats{
+    display: flex;
+    flex-direction: row;
   }
   .button{
       display: flex;
