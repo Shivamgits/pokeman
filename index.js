@@ -19,7 +19,7 @@ const bcol = {
   poison : "#6c5ce7", 
   psychic : "# a29bfe", 
   rock : "#2d3436", 
-  water : "#0190FF"
+  water :"#0190FF"
 }
 async function fetchapi(){
      let data = await fetch(url);
@@ -44,7 +44,7 @@ async function fetchapi(){
       innerdiv.append(hp);
        hp.innerText= ` hp : ${res1.stats[0].base_stat}`
        hp.setAttribute("class", "hp");
-                
+
        const imageDiv = document.createElement("div")
       innerdiv.append(imageDiv);
 
