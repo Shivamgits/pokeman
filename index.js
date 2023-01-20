@@ -61,14 +61,21 @@ async function fetchapi(){
 }
 
 async function nextPage(){
-  
+  for(let i = 0; i <19;i++){
+    const outer = document.querySelector(".container1");
+    outer.remove();
+  }
+ 
   count=count+1;
   //console.log(count)
   url = res.next
  fetchapi()
 }
 async function previousPage(){
-  
+  for(let i = 0; i <19;i++){
+    const outer = document.querySelector(".container1");
+    outer.remove();
+  }
   count=count-39;
   //console.log(count)
   url = res.previous;
