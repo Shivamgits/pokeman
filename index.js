@@ -63,14 +63,14 @@ async function fetchapi(){
 async function nextPage(){
   
   count=count+1;
-  console.log(count)
+  //console.log(count)
   url = res.next
  fetchapi()
 }
 async function previousPage(){
   
   count=count-39;
-  console.log(count)
+  //console.log(count)
   url = res.previous;
  fetchapi()
 }
