@@ -1,17 +1,18 @@
 const cont = document.querySelector(".container");
-
+const next = document .getElementById("next");
+let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
+let res = null
+let count = 0;
 async function fetchapi(){
-    const url = "https://pokeapi.co/api/v2/pokemon"
-    const data = await fetch(url);
-    const res = await data.json();
-    //console.log(res.results[0]);
+     let data = await fetch(url);
+     res = await data.json();
 
-    console.log(res.results[15].name)
     for(let i = 0; i < 19; i++){
-        const url1 = `https://pokeapi.co/api/v2/pokemon/${i+1}`
+        const url1 = `https://pokeapi.co/api/v2/pokemon/${count+1}`
     const data1 = await fetch(url1);
+    count++;
     const res1 = await data1.json();
-    console.log(res1);
+     //console.log(res1);
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
 
@@ -54,5 +55,24 @@ async function fetchapi(){
       
        cont.append(div)
     }
-} 
+  
+     // console.log(url)
+    
+}
+
+async function nextPage(){
+  
+  count=count+1;
+  console.log(count)
+  url = res.next
+ fetchapi()
+}
+async function previousPage(){
+  
+  count=count-39;
+  console.log(count)
+  url = res.previous;
+ fetchapi()
+}
+
 fetchapi();
