@@ -13,27 +13,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <title>pokemonk</title>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />    
+<title>PokeMonk</title>
 </head>
 
 <body>
     <nav class="nav">
-        <div id="logo">
-            <img src="bg.png" onclick="home()">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a onclick="home()" style="cursor: pointer;" class="logo">POKEMONK</a>
+      
+        <ul class="nav-links">
+          <i class="uil uil-times navCloseBtn"></i>
+          <li><a style="cursor: pointer;" onclick="home()">Home</a></li>
+          
+        </ul>
+      
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+          <i class="uil uil-search search-icon" onclick="search()" ></i>
+          <input type="text" id="searchBar" placeholder="Search here..." />
         </div>
-        <div class="nav1" onclick="home()">
-            POKEMONK
-        </div>
-        <div class="nav2">
-            <li class="w3-jumbo" onclick="home()">
-                <i class="material-icons w3-jumbo">home</i>
-                Home</li>
-            <input type="search" id="searchBar" />
-            <li class="w3-jumbo" onclick="search()" >
-                <i class="material-icons w3-jumbo" id="search">search</i>
-            </li>
-        </div>
-    </nav>
+      </nav>
     <div class="container">
 
     </div>

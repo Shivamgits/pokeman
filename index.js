@@ -1,10 +1,8 @@
 const cont = document.querySelector(".container");
 const next = document .querySelector(".next");
 const prev = document .querySelector(".previous");
-const dark = document .querySelector(".dark");
-const light = document .querySelector(".light");
-
 const searchBar = document.querySelector("#searchBar");
+
 let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 let res = null
 let count = 0;
@@ -241,6 +239,28 @@ async function previousPage(){
   flag=0;
   fetchapi()
 }
+const nav = document.querySelector(".nav"),
+  searchIcon = document.querySelector("#searchIcon"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
+
+searchIcon.addEventListener("click", () => {
+  nav.classList.toggle("openSearch");
+  nav.classList.remove("openNav");
+  if (nav.classList.contains("openSearch")) {
+    return searchIcon.classList.replace("uil-search", "uil-times");
+  }
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+  nav.classList.add("openNav");
+  nav.classList.remove("openSearch");
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+navCloseBtn.addEventListener("click", () => {
+  nav.classList.remove("openNav");
+});
 
 
 fetchapi();
