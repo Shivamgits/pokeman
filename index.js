@@ -1,6 +1,9 @@
 const cont = document.querySelector(".container");
 const next = document .querySelector(".next");
 const prev = document .querySelector(".previous");
+const dark = document .querySelector(".dark");
+const light = document .querySelector(".light");
+
 const searchBar = document.querySelector("#searchBar");
 let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 let res = null
@@ -24,6 +27,7 @@ const bcol = {
   water :"#0190FF"
 }
 let flag = 0;
+let a = 0;
 async function fetchapi(){
      let data = await fetch(url);
      res = await data.json();
@@ -52,7 +56,15 @@ async function fetchapi(){
     //  console.log(res1);
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
-      div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
+      // console.log(a);
+      if(a == 0){
+        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
+      }
+      else{
+        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #1D1D1D 36%)`
+      }
+      console.log(a);
+     
 
       const innerdiv = document.createElement("div");
       innerdiv.setAttribute("class", "card");
@@ -119,7 +131,7 @@ async function nextPage(){
   count=count+1;
   //console.log(count)
   url = res.next
- fetchapi(url)
+ fetchapi()
 }
 async function previousPage(){
   for(let i = 0; i <19;i++){
@@ -129,7 +141,7 @@ async function previousPage(){
   count=count-39;
   //console.log(count)
   url = res.previous;
- fetchapi(url)
+ fetchapi()
 }
 
  async function search(){
@@ -156,6 +168,7 @@ async function previousPage(){
       const color=bcol[res3.types[0].type.name];
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
+    
       div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
       div.style.margin = "4rem auto"
       div.style.transform = "scale(1.3)"
@@ -232,5 +245,16 @@ async function previousPage(){
   }
   flag=0;
   fetchapi()
+}
+
+function toggle1(){
+  light.style.display = "none"
+  cont.style.background = "#000000"
+  a++;
+  // div.style.background = `radial-gradient(circle at 50% 0%, orange 40%, #1D1D1D 36%)`
+  fetchapi()
+}
+function toggle2(){
+  dark.style.display = "none"
 }
 fetchapi();
