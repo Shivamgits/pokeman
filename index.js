@@ -27,7 +27,6 @@ const bcol = {
   water :"#0190FF"
 }
 let flag = 0;
-let a = 0;
 async function fetchapi(){
      let data = await fetch(url);
      res = await data.json();
@@ -56,15 +55,11 @@ async function fetchapi(){
     //  console.log(res1);
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
-      // console.log(a);
-      if(a == 0){
-        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
-      }
-      else{
-        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #1D1D1D 36%)`
-      }
-      console.log(a);
      
+     
+        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
+      
+    
 
       const innerdiv = document.createElement("div");
       innerdiv.setAttribute("class", "card");
@@ -247,14 +242,5 @@ async function previousPage(){
   fetchapi()
 }
 
-function toggle1(){
-  light.style.display = "none"
-  cont.style.background = "#000000"
-  a++;
-  // div.style.background = `radial-gradient(circle at 50% 0%, orange 40%, #1D1D1D 36%)`
-  fetchapi()
-}
-function toggle2(){
-  dark.style.display = "none"
-}
+
 fetchapi();
