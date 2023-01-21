@@ -1,5 +1,6 @@
 const cont = document.querySelector(".container");
-const next = document .getElementById("next");
+const next = document .querySelector(".next");
+const prev = document .querySelector(".previous");
 let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 let res = null
 let count = 0;
@@ -24,7 +25,19 @@ const bcol = {
 async function fetchapi(){
      let data = await fetch(url);
      res = await data.json();
-
+    // console.log(res.previous);
+     if(res.previous == null){
+      prev.disabled = true;
+      prev.style.background = "white";
+      prev.style.color = "black";
+      // prev.style.display = 'none';
+     }
+     if(res.next == null){
+     next.disabled = true;
+     next.style.background = "white";
+     next.style.color = "black";
+     }
+    
     for(let i = 0; i < 19; i++){
         const url1 = `https://pokeapi.co/api/v2/pokemon/${count+1}`
     const data1 = await fetch(url1);
@@ -62,13 +75,12 @@ async function fetchapi(){
       innerdiv.append(type);
       type.setAttribute("class","type")
       //console.log(res1.types.length)
+
       for(let i=0;i<res1.types.length;i++){
         const types = document.createElement("div")
         type.append(types);
         types.setAttribute("class","types")
         types.innerText = res1.types[i].type.name
-        
-        // console.log(color);
         types.style.background=color;
       }
 

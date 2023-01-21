@@ -112,7 +112,7 @@ nav {
   justify-content: space-between;
   padding: 1rem;
 }
-.button #previous {
+.button .previous {
   height: 1.8rem;
   width: 9rem;
   border: 1px solid #2b3467;
@@ -122,11 +122,11 @@ nav {
   color: white;
   border-radius: 1rem;
 }
-.button #previous:hover {
+.button .previous:hover {
   color: #eb455f;
   background-color: white;
 }
-.button #next {
+.button .next {
   height: 1.8rem;
   width: 9rem;
   border: 1px solid #2b3467;
@@ -136,7 +136,7 @@ nav {
   color: white;
   border-radius: 1rem;
 }
-.button #next:hover {
+.button .next:hover {
   color: #eb455f;
   background-color: white;
   transform: scale(1.05);
@@ -166,7 +166,10 @@ nav {
 }
 .types{
   border-radius: .7rem;
-  padding: .4rem;
+  padding-top: 0.2rem;
+  padding-right: 0.7rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.7rem;
 }
 
 .hp{
