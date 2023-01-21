@@ -2,6 +2,7 @@ const cont = document.querySelector(".container");
 const next = document .querySelector(".next");
 const prev = document .querySelector(".previous");
 const searchBar = document.querySelector("#searchBar");
+
 let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 let res = null
 let count = 0;
@@ -52,7 +53,11 @@ async function fetchapi(){
     //  console.log(res1);
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
-      div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
+     
+     
+        div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
+      
+    
 
       const innerdiv = document.createElement("div");
       innerdiv.setAttribute("class", "card");
@@ -119,7 +124,7 @@ async function nextPage(){
   count=count+1;
   //console.log(count)
   url = res.next
- fetchapi(url)
+ fetchapi()
 }
 async function previousPage(){
   for(let i = 0; i <19;i++){
@@ -129,7 +134,7 @@ async function previousPage(){
   count=count-39;
   //console.log(count)
   url = res.previous;
- fetchapi(url)
+ fetchapi()
 }
 
  async function search(){
@@ -156,6 +161,7 @@ async function previousPage(){
       const color=bcol[res3.types[0].type.name];
       const div = document.createElement("div")
       div.setAttribute("class", "container1");
+    
       div.style.background = `radial-gradient(circle at 50% 0%, ${color} 40%, #ffffff 36%)`
       div.style.margin = "4rem auto"
       div.style.transform = "scale(1.3)"
@@ -233,4 +239,28 @@ async function previousPage(){
   flag=0;
   fetchapi()
 }
+const nav = document.querySelector(".nav"),
+  searchIcon = document.querySelector("#searchIcon"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
+
+searchIcon.addEventListener("click", () => {
+  nav.classList.toggle("openSearch");
+  nav.classList.remove("openNav");
+  if (nav.classList.contains("openSearch")) {
+    return searchIcon.classList.replace("uil-search", "uil-times");
+  }
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+  nav.classList.add("openNav");
+  nav.classList.remove("openSearch");
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+navCloseBtn.addEventListener("click", () => {
+  nav.classList.remove("openNav");
+});
+
+
 fetchapi();
